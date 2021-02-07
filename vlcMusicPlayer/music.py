@@ -24,6 +24,7 @@ class Music:
 		self.player = vlc_music.media_player_new()
 		media = vlc_music.media_new(self.path)
 		self.player.set_media(media)
+		self.player.play()
 
 	def pause(self):
 		if self.player is not None:
