@@ -8,7 +8,7 @@ A small package to create a music player with vlc package.
 
 ## Global informations <a id="globalInfos"></a>
  * Author: [LostPy][me]
- * Version: 3
+ * Version: 1
  * License: [MIT License][license]
  * [**Documentation**](https://github.com/LostPy/vlcMusicPlayer/wiki)
 
