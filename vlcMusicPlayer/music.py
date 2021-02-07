@@ -35,12 +35,12 @@ class Music:
 			self.player.pause()
 
 	def stop(self):
-		if player is not None:
+		if self.player is not None:
 			self.player.stop()
 			self.player = None
 
 	def resume(self):
-		if self.player is not None and self.is_playing:
+		if self.player is not None and not self.is_playing:
 			self.player.play()
 
 	@property
