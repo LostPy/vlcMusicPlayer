@@ -44,8 +44,8 @@ class MusicPlayer:
 			self.current_media = vlc_player.media_new(music.path)
 			self.current_music = music
 		elif isinstance(music, str):
-			self.current_media = vlc_player.media_new(music)
 			self.current_music = Music(music)
+			self.current_media = vlc_player.media_new(self.current_music.path)
 		else:
 			raise ValueError(f"'music' must be a instance of Music or str, not {type(music)}.")
 	

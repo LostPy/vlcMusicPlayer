@@ -1,5 +1,6 @@
 """A music modele object."""
 
+import os
 import vlc
 
 vlc_music = vlc.Instance()
@@ -9,7 +10,10 @@ class Music:
 	"""Class to reprensent a music."""
 
 	def __init__(self, music_path: str, title: str = "Unknow", artist: str = "Unknow"):
-		self.path = music_path
+		if os.path.exists(music_path):
+			self.path = music_path
+		else:
+			raise FileNotFoundError(f"File {music_path} was not found.")
 		self.title = title
 		self.artist = artist
 		self.player = None
@@ -36,7 +40,7 @@ class Music:
 			self.player = None
 
 	def resume(self):
-		if player is not None and self.is_playing:
+		if self.player is not None and self.is_playing:
 			self.player.play()
 
 	@property
