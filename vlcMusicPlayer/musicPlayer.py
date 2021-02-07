@@ -83,6 +83,12 @@ class MusicPlayer:
 		old_volume = self.current_volume
 		self.__init__()
 		self.set_volume(old_volume)
+
+	def get_position(self):
+		return self.player.get_position()
+
+	def set_position(self, postion: float):
+		self.player.set_position(postion)
 	
 	def add_music(self, music_path: str):
 		self.queue.add_item(music_path)
